@@ -1,0 +1,1 @@
+../../../MXBannerView/MXBannerView/MXImageBox.h

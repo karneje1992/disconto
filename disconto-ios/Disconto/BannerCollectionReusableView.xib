@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BannerCollectionReusableView" customModule="Disconto" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" restorationIdentifier="BannerCollectionReusableView" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="BannerCollectionReusableView" id="U6b-Vx-4bR">
+            <rect key="frame" x="0.0" y="0.0" width="773" height="375"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kop-Qj-JIm">
+                    <rect key="frame" x="0.0" y="0.0" width="773" height="375"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="kop-Qj-JIm" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="88R-Rs-fUm"/>
+                <constraint firstAttribute="trailing" secondItem="kop-Qj-JIm" secondAttribute="trailing" id="E3M-Up-8Lx"/>
+                <constraint firstItem="kop-Qj-JIm" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="ONr-jm-Ekh"/>
+                <constraint firstAttribute="bottom" secondItem="kop-Qj-JIm" secondAttribute="bottom" id="p3P-E9-X7T"/>
+            </constraints>
+            <point key="canvasLocation" x="335.19999999999999" y="127.28635682158921"/>
+        </collectionReusableView>
+    </objects>
+</document>

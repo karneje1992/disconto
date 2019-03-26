@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="DTextFildInputCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="64"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="goM-bM-lI9">
+                        <color key="tintColor" red="0.96078431369999995" green="0.29803921570000003" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                        <connections>
+                            <outlet property="delegate" destination="-1" id="gRK-Yh-vPJ"/>
+                        </connections>
+                    </textField>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YY1-yP-MMB">
+                        <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="hZT-2y-Dkh"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="YY1-yP-MMB" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="4fC-IM-9hS"/>
+                    <constraint firstItem="goM-bM-lI9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="7Aq-j7-LKa"/>
+                    <constraint firstAttribute="trailing" secondItem="goM-bM-lI9" secondAttribute="trailing" constant="16" id="BJl-np-VGX"/>
+                    <constraint firstAttribute="bottom" secondItem="goM-bM-lI9" secondAttribute="bottom" id="HZT-R9-epT"/>
+                    <constraint firstItem="goM-bM-lI9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="a1W-10-PVB"/>
+                    <constraint firstItem="YY1-yP-MMB" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="sYc-5m-bTh"/>
+                    <constraint firstAttribute="bottom" secondItem="YY1-yP-MMB" secondAttribute="bottom" id="wbm-bl-LA9"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="inputTextField" destination="goM-bM-lI9" id="W3z-rK-NTB"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

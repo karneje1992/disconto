@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OverlayViewController">
+            <connections>
+                <outlet property="clear" destination="Zkg-fZ-P4X" id="3Bh-8k-WXw"/>
+                <outlet property="counterLabel" destination="u59-vl-KV1" id="14I-QH-L3r"/>
+                <outlet property="cropButton" destination="NwE-yN-0cU" id="h0z-O4-Igl"/>
+                <outlet property="imageView" destination="OBa-Z0-u4W" id="QiS-qU-ItB"/>
+                <outlet property="photoButton" destination="53r-5Z-d2v" id="csc-0J-DBY"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overlaygraphic" translatesAutoresizingMaskIntoConstraints="NO" id="OBa-Z0-u4W">
+                    <rect key="frame" x="56" y="100" width="263" height="468"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u59-vl-KV1">
+                    <rect key="frame" x="188" y="92" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="top" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Zkg-fZ-P4X">
+                    <rect key="frame" x="27" y="583" width="38" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="38" id="AUu-hP-TMf"/>
+                        <constraint firstAttribute="height" constant="36" id="R9I-lh-kUY"/>
+                    </constraints>
+                    <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
+                    <state key="normal" image="clear">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="clear:" destination="-1" eventType="touchUpInside" id="lLB-Hg-epZ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NwE-yN-0cU">
+                    <rect key="frame" x="310" y="587" width="38" height="36"/>
+                    <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="15"/>
+                    <state key="normal" image="add">
+                        <color key="titleColor" red="0.92941176469999998" green="0.23529411759999999" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="crop:" destination="-1" eventType="touchUpInside" id="Fae-mM-oxi"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Удалить" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxD-uI-9Qm">
+                    <rect key="frame" x="16" y="627" width="60" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="Ybo-H7-uFv"/>
+                        <constraint firstAttribute="height" constant="32" id="aX7-P7-uRf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добавить часть чека" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eku-EA-Q13">
+                    <rect key="frame" x="299" y="627" width="60" height="32"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отправить чек" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cd6-dw-bz5">
+                    <rect key="frame" x="143" y="627" width="90" height="32"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53r-5Z-d2v">
+                    <rect key="frame" x="169" y="588" width="38" height="36"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" image="sendChak">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="takePhoto:" destination="-1" eventType="touchUpInside" id="wDL-Xe-351"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="OBa-Z0-u4W" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2N9-hS-TkK"/>
+                <constraint firstItem="NwE-yN-0cU" firstAttribute="centerX" secondItem="Eku-EA-Q13" secondAttribute="centerX" id="5FU-0Z-rFq"/>
+                <constraint firstAttribute="bottom" secondItem="Eku-EA-Q13" secondAttribute="bottom" constant="8" id="AL2-UL-D3c"/>
+                <constraint firstItem="53r-5Z-d2v" firstAttribute="height" secondItem="Zkg-fZ-P4X" secondAttribute="height" id="AUy-pv-mYL"/>
+                <constraint firstItem="Cd6-dw-bz5" firstAttribute="width" secondItem="gxD-uI-9Qm" secondAttribute="width" multiplier="1.5" id="B1g-gw-94p"/>
+                <constraint firstAttribute="bottom" secondItem="Cd6-dw-bz5" secondAttribute="bottom" constant="8" id="Imr-e5-pxG"/>
+                <constraint firstItem="u59-vl-KV1" firstAttribute="centerX" secondItem="OBa-Z0-u4W" secondAttribute="centerX" id="Je0-UA-bIW"/>
+                <constraint firstItem="Cd6-dw-bz5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="PlO-9H-iZW"/>
+                <constraint firstItem="Eku-EA-Q13" firstAttribute="width" secondItem="gxD-uI-9Qm" secondAttribute="width" id="UEb-Yc-42P"/>
+                <constraint firstItem="gxD-uI-9Qm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="UNW-3g-DQb"/>
+                <constraint firstItem="OBa-Z0-u4W" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.7" constant="1" id="VRF-5F-1Yl"/>
+                <constraint firstItem="NwE-yN-0cU" firstAttribute="width" secondItem="Zkg-fZ-P4X" secondAttribute="width" id="WEO-bk-XOE"/>
+                <constraint firstItem="Eku-EA-Q13" firstAttribute="height" secondItem="gxD-uI-9Qm" secondAttribute="height" id="XfF-pC-cw7"/>
+                <constraint firstItem="Zkg-fZ-P4X" firstAttribute="centerX" secondItem="gxD-uI-9Qm" secondAttribute="centerX" id="ZDd-g7-znF"/>
+                <constraint firstItem="Eku-EA-Q13" firstAttribute="top" secondItem="NwE-yN-0cU" secondAttribute="bottom" constant="4" id="ZZF-M7-ht0"/>
+                <constraint firstItem="gxD-uI-9Qm" firstAttribute="top" secondItem="Zkg-fZ-P4X" secondAttribute="bottom" constant="8" id="aXh-I1-VwN"/>
+                <constraint firstItem="OBa-Z0-u4W" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ay8-Jp-PFd"/>
+                <constraint firstItem="53r-5Z-d2v" firstAttribute="width" secondItem="Zkg-fZ-P4X" secondAttribute="width" id="clC-Ov-tuw"/>
+                <constraint firstItem="OBa-Z0-u4W" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.7" id="fFv-hA-9mh"/>
+                <constraint firstAttribute="bottom" secondItem="gxD-uI-9Qm" secondAttribute="bottom" constant="8" id="mSR-0V-pFw"/>
+                <constraint firstItem="53r-5Z-d2v" firstAttribute="centerX" secondItem="Cd6-dw-bz5" secondAttribute="centerX" id="oqx-Hq-OHG"/>
+                <constraint firstItem="NwE-yN-0cU" firstAttribute="height" secondItem="Zkg-fZ-P4X" secondAttribute="height" id="rxO-oI-JWX"/>
+                <constraint firstItem="Cd6-dw-bz5" firstAttribute="top" secondItem="53r-5Z-d2v" secondAttribute="bottom" constant="3" id="tDw-ov-szc"/>
+                <constraint firstAttribute="trailing" secondItem="Eku-EA-Q13" secondAttribute="trailing" constant="16" id="uGP-61-ysk"/>
+                <constraint firstItem="OBa-Z0-u4W" firstAttribute="top" secondItem="u59-vl-KV1" secondAttribute="bottom" constant="8" id="wAn-ac-dNp"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="add" width="32" height="32"/>
+        <image name="clear" width="50" height="50"/>
+        <image name="overlaygraphic" width="512" height="512"/>
+        <image name="sendChak" width="50" height="50"/>
+    </resources>
+</document>

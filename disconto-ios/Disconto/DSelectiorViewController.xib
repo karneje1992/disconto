@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DSelectiorViewController">
+            <connections>
+                <outlet property="actionButton" destination="Nan-Vw-tZJ" id="rt2-ho-ZMd"/>
+                <outlet property="allPointsLabel" destination="sEZ-Ei-Bkj" id="Qc8-7I-705"/>
+                <outlet property="tableView" destination="0U6-Q1-itl" id="jLL-H4-h1i"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" restorationIdentifier="DSelectiorViewController" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ls6-67-bxf">
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEZ-Ei-Bkj">
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" red="0.92941176469999998" green="0.23529411759999999" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Укажите количество товаров в чеке " textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qww-cz-Uje">
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.92941176469999998" green="0.23529411759999999" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Qww-cz-Uje" secondAttribute="bottom" constant="-1" id="1JQ-2i-6dg"/>
+                        <constraint firstItem="sEZ-Ei-Bkj" firstAttribute="leading" secondItem="ls6-67-bxf" secondAttribute="leading" constant="16" id="6nb-iL-pdm"/>
+                        <constraint firstItem="sEZ-Ei-Bkj" firstAttribute="centerY" secondItem="ls6-67-bxf" secondAttribute="centerY" id="8mH-iN-EdH"/>
+                        <constraint firstAttribute="trailing" secondItem="Qww-cz-Uje" secondAttribute="trailing" constant="8" id="Mft-xq-VwW"/>
+                        <constraint firstItem="Qww-cz-Uje" firstAttribute="width" secondItem="ls6-67-bxf" secondAttribute="width" multiplier="0.5" id="Rzf-yW-cVA"/>
+                        <constraint firstItem="sEZ-Ei-Bkj" firstAttribute="width" secondItem="ls6-67-bxf" secondAttribute="width" multiplier="0.3" id="XeT-Fx-aUY"/>
+                        <constraint firstItem="Qww-cz-Uje" firstAttribute="top" secondItem="ls6-67-bxf" secondAttribute="top" constant="8" id="YHC-A5-syb"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0U6-Q1-itl">
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="iLG-H1-YM9"/>
+                        <outlet property="delegate" destination="-1" id="mtO-rw-lXR"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nan-Vw-tZJ">
+                    <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="Ef6-er-R5E"/>
+                    </constraints>
+                    <state key="normal">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="goToPhoto:" destination="-1" eventType="touchUpInside" id="xMW-zv-KFq"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Nan-Vw-tZJ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.8" id="0Rv-jk-tN8"/>
+                <constraint firstItem="ls6-67-bxf" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="7x5-1Z-d7g"/>
+                <constraint firstItem="0U6-Q1-itl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8yQ-gI-Yfp"/>
+                <constraint firstAttribute="trailing" secondItem="0U6-Q1-itl" secondAttribute="trailing" id="C2A-3R-4uv"/>
+                <constraint firstAttribute="bottom" secondItem="0U6-Q1-itl" secondAttribute="bottom" id="D4z-mH-i8v"/>
+                <constraint firstItem="ls6-67-bxf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="K8Z-jV-eDm"/>
+                <constraint firstItem="ls6-67-bxf" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.1" id="Ory-Vn-LbI"/>
+                <constraint firstItem="Nan-Vw-tZJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ydi-Kk-lMr"/>
+                <constraint firstAttribute="bottom" secondItem="Nan-Vw-tZJ" secondAttribute="bottom" constant="8" id="csv-rK-70Y"/>
+                <constraint firstItem="0U6-Q1-itl" firstAttribute="top" secondItem="ls6-67-bxf" secondAttribute="bottom" id="ouJ-1i-P1T"/>
+                <constraint firstItem="ls6-67-bxf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yCg-Rb-dAv"/>
+            </constraints>
+            <point key="canvasLocation" x="191.5" y="289.5"/>
+        </view>
+    </objects>
+</document>

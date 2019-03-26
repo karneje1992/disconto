@@ -1,0 +1,386 @@
+//
+//  PrefixHeader.pch
+//  Disconto
+//
+//  Created by user on 11.05.16.
+//  Copyright © 2016 Disconto. All rights reserved.
+//
+
+#pragma mark - macros
+
+#define USER_IS_LOGINED [[NSUserDefaults standardUserDefaults] objectForKey:@"userID"]
+#define RESTART [UIView transitionWithView:[[UIApplication sharedApplication] delegate].window duration:1.0 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{ [[UIApplication sharedApplication] delegate].window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController]; } completion:nil]
+#define DEVICEUUID [[[UIDevice currentDevice] identifierForVendor] UUIDString]
+#define SET_PUSH_TOKEN(pushToken) [[NSUserDefaults standardUserDefaults] setObject:pushToken forKey:@"push_token"]
+#define PUSH_TOKEN [[NSUserDefaults standardUserDefaults] objectForKey:@"push_token"]
+#define SET_TOKEN(token) [[NSUserDefaults standardUserDefaults] setObject:token forKey:@"UID"]
+#define TOKEN [[NSUserDefaults standardUserDefaults] objectForKey:@"UID"]
+#define SHOW_TABBAR_CONTROLLER [self presentViewController:[[UIStoryboard storyboardWithName:@"DTabBarController" bundle:nil] instantiateViewControllerWithIdentifier:@"DTabBarController"] animated:YES completion:NULL];
+
+#define SHOW_LEFTMENU_CONTROLLER [self presentViewController:[[UIStoryboard storyboardWithName:@"SWRevealViewController" bundle:nil] instantiateViewControllerWithIdentifier:@"SWRevealViewController"] animated:YES completion:NULL];
+
+#define SHOW_START_TUTORIAL [self presentViewController:[[UIStoryboard storyboardWithName:@"SummaryViewController" bundle:nil] instantiateViewControllerWithIdentifier:@"SummaryViewController"] animated:YES completion:NULL];
+#define SHOW_PREVIEW_CONTROLLER [self presentViewController:[[UIStoryboard storyboardWithName:@"DPreviewController" bundle:nil] instantiateViewControllerWithIdentifier:@"DPreviewController"] animated:YES completion:nil];
+#define SYSTEM_COLOR [UIColor colorWithRed: 245/255.0 green: 76/255.0 blue: 13/255.0 alpha: 1.0]
+#define SYSTEM_NAV SYSTEM_COLOR
+#define SHOW_PROGRESS [SVProgressHUD show]
+#define HIDE_PROGRESS [SVProgressHUD dismiss]
+#define SHOW_MESSAGE(title,string) [[[UIAlertView alloc] initWithTitle:title message:string delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+#define isiPhone4  ([[UIScreen mainScreen] bounds].size.height == 480)?TRUE:FALSE
+#define isiPhone5  ([[UIScreen mainScreen] bounds].size.height == 568)?TRUE:FALSE
+#define isiPhone  (UI_USER_INTERFACE_IDIOM() == 0)?TRUE:FALSE
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+#pragma mark - Headers
+
+#import "MXBannerView.h"
+#import "TTTAttributedLabel.h"
+#import <UIKit/UIKit.h>
+#import "HTMLAttributedString.h"
+#import "SWRevealViewController.h"
+#import "OKSDK.h"
+//#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "ViewController.h"
+#import "DMainTableViewCell.h"
+#import "SwipeView.h"
+#import "DCategoryTableViewCell.h"
+#import "StyleChangerClass.h"
+#import "DTextFildInputCell.h"
+#import "DTextFildInputCell.h"
+#import "DLoginModel.h"
+#import "DRegistrationModel.h"
+#import "ValidatorValues.h"
+#import "NetworkManeger.h"
+#import "DCityModel.h"
+#import "DCategoryModel.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+//#import "DBanerModel.h"
+#import "DProductsViewController.h"
+#import "DMainCollectionViewCell.h"
+#import "DProductCollectionViewCell.h"
+#import "DProductModel.h"
+#import "DQuestModel.h"
+#import "DShopModel.h"
+#import "DSingleProductController.h"
+#import "DProductHeaderCell.h"
+#import "DDescriptionCell.h"
+#import "DColorTextCell.h"
+#import "DStorsCell.h"
+#import "DQuestModel.h"
+#import "DQuestsFromProductController.h"
+#import <MediaPlayer/MediaPlayer.h>
+#import "DTableViewQuestController.h"
+#import "DAnswerModel.h"
+#import "DShopCellTableViewCell.h"
+#import "DShopPreview.h"
+#import "DSelectProductCell.h"
+#import "DShopModel.h"
+#import "DCacheViewController.h"
+#import "DProfileViewController.h"
+#import "DCategoryNavController.h"
+#import "HeaderCollectionReusableView.h"
+#import <CSStickyHeaderFlowLayout/CSStickyHeaderFlowLayout.h>
+#import "DUserModel.h"
+#import "DSocislModel.h"
+#import "DMessageModel.h"
+#import "DMessageCells.h"
+#import "DReadMessageViewController.h"
+#import "DTutorialViewController.h"
+#import "DTopCell.h"
+#import "DMessageCell.h"
+#import "DSendToSupportController.h"
+#import "AppDelegate.h"
+#import "DSettingViewController.h"
+#import "DInputCell.h"
+#import "DChangePasswordViewController.h"
+#import "DChangeEmailViewController.h"
+#import "DChangePhoneViewController.h"
+#import "DVeryFaryMailController.h"
+#import "DCodeViewController.h"
+#import "DShopsViewController.h"
+#import "DMoneyViewController.h"
+#import "DPayType.h"
+#import "DPayListTableViewCell.h"
+#import "DBalanceTableViewCell.h"
+#import "DInProgressTableViewController.h"
+#import "DHistoryTableViewController.h"
+#import "DHistoryTableViewCell.h"
+#import "DHistoryModel.h"
+#import <MapKit/MapKit.h>
+#import "DMapItemModel.h"
+#import "DStartTutorialViewController.h"
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <AudioToolbox/AudioToolbox.h>
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+#import "OKSDK.h"
+#import "DUserModel.h"
+#import "VKSdk.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+//∫#import <YandexMobileMetrica/YandexMobileMetrica.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "OKSDK.h"
+#import "DSocialViewController.h"
+#import "DSuperViewController.h"
+#import <Google/Analytics.h>
+#import "DSelectProductCell.h"
+#import "DSelectorCollectionViewCell.h"
+#import "DSelectiorViewController.h"
+#import "DSelectorModel.h"
+#import <AVFoundation/AVFoundation.h>
+#import <CoreMedia/CoreMedia.h>
+#import "OverlayViewController.h"
+#import "DVerificationModel.h"
+#import "DPaymentModel.h"
+#import "DSharesController.h"
+#import "DSharesModel.h"
+#import "DSingleSharesViewController.h"
+#import "DProfileViewController.h"
+#import "DCacameraViewController.h"
+//#import "AppsFlyerTracker.h"
+//#import "Flurry.h"
+#import "DCacameraViewController.h"
+@import GoogleMaps;
+#import "DMarker.h"
+#import "DPhotoListViewController.h"
+#import "DCircleViewController.h"
+//#import "VKViewController.h"
+#import "MVVMSettingsViewController.h"
+#import "DSettingsViewModel.h"
+#import <AppsFlyerLib/AppsFlyerTracker.h>
+#import "DForceCubeSubClass.h"
+#import "DisableScrennViewController.h"
+#import "MenuViewController.h"
+#import "DScannerViewController.h"
+#import "QRSelfViewController.h"
+#import "QRSenderFooterView.h"
+//@import Firebase;
+
+#pragma mark - Constants
+#pragma mark - api tags
+
+//@import "DNewChangePhoneIterator.h"
+//@import "DNewChangePhoneRoute.h"
+//@import "DNewChangePhonePresenterPotocol.h"
+//@import "DNewChangePhoneViewController.h"
+
+//---------------------------------------------------------------
+//static NSString *const APMSERVER =  @"https://api-dev.apmcheck.ru/disconto/";
+static NSString *const APMSERVER =  @"https://api.apmcheck.ru/disconto/";
+//static NSString *const SERVER = @"http://disconto.devlify.com/api/v3";
+static NSString *const SERVER = @"https://api.disconto.me/api/v3";
+static NSString *const smsMessage = @"Введите код подтверждения";
+static NSString *const apiRegistration = @"/registration";
+static NSString *const apiLogin = @"/login";
+static NSString *const apiMailExist = @"/users/exists/email";
+static NSString *const apiPhoneExist = @"/users/exists/phone";
+static NSString *const apiCitys = @"/cities";
+static NSString *const apiBaners = @"/disconto/banners";
+static NSString *const apiProfile = @"/profile";
+static NSString *const apiCategory = @"/categories";
+static NSString *const apiProductForCategory = @"/products";
+static NSString *const apiProduct = @"/product";
+static NSString *const apiAddToFavorite= @"/favorite";
+static NSString *const apiMessages = @"/messages";
+static NSString *const apiMessagesRead = @"/messages/read";
+static NSString *const apiStores = @"/stores";
+static NSString *const apiQuestComplit = @"/quests/complete";
+static NSString *const apiProfileProducts = @"/profile/products";
+static NSString *const apiChangeCancel = @"/users/change/delete";
+static NSString *const apiHistory = @"/history";
+static NSString *const apiPending = @"/history/pending";
+static NSString *const apiSendToSupport = @"/support";
+static NSString *const apiLoginPlaceholder = @"Почта или телефон";
+static NSString *const apiGetUnlocedProduct = @"/products/unlocked";
+static NSString *const apiGetPromos = @"/promos";
+static NSString *const apiGetCupons = @"/coupons";
+static NSString *const apiNewSocLogin = @"/login/social/";
+static NSInteger const couponTimeOut = 300;
+static NSInteger const version = 9;
+
+//-----------------------------------------------------------------------
+static NSString *const placeholderPassword = @"Пароль";
+
+static NSString *const kDisconto = @" дисконтов |";
+static NSString *const kNew = @" новых";
+static NSString *const kRub = @" pуб.";
+
+static NSString *const kGetSupportTitle = @"/settings/support";
+static NSString *const kGetReadedMessage = @"/messages/readed";
+static NSString *const KSaveProfile = @"/users/profile";
+static NSString *const kChangePassword = @"/users/changepassword";
+static NSString *const kGetMoney = @"/payment/config";
+static NSString *const kGetBalance = @"/balance";
+static NSString *const kGetHistory = @"/users/history";
+static NSString *const kFB = @"fb";
+static NSString *const kOK = @"ok";
+static NSString *const kVK = @"vk";
+static NSString *const apiGetHistory = @"/history";
+static NSInteger const photoLimited = 5;
+static NSString *const kEmailType = @"changeEmail";
+static NSString *const kPhoneType = @"changePhone";
+static NSString *const apiMoneyOut = @"/payment/config";
+static NSString *const apiConferm = @"/users/change/verify";
+static NSString *const apiForgotPassword = @"/users/restore/password";
+static NSString *const apiChangePassword = @"/users/change/password";
+static NSString *const apiChageProfile = @"/users/change";
+static NSString *const apiExistPhone = @"users/exists/phone";
+static NSString *const apiRegisterToken = @"/set/token";
+static NSString *const apiSettingsCamera = @"/settings/camera";
+static NSString *const kID = @"id";
+static NSString *const kEmail = @"email";
+static NSString *const kPhone = @"phone";
+static NSString *const kSocType = @"soc_type";
+static NSString *const kName = @"name";
+static NSString *const kFirstName = @"first_name";
+static NSString *const kLastName = @"last_name";
+static NSString *const kCityID = @"city_id";
+static NSString *const kPassword = @"password";
+static NSString *const kSocID = @"soc_id";
+static NSString *const titleNext = @"Далее";
+static NSString *const titleDone = @"Готово";
+static NSString *const titleProfile = @"Профиль";
+static NSString *const imgProfile = @"profile";
+static NSString *const titleSettings = @"Настройки";
+static NSString *const imgSettings = @"settings";
+static NSString *const titleSupport = @"Связаться с тех.поддержкой";
+static NSString *const imgSupport = @"contactAdmin";
+static NSString *const titleExit = @"Выход";
+static NSString *const imgExit = @"exit";
+static NSString *const imgLogo = @"logo";
+static NSString *const titleShops = @"Магазины";
+static NSString *const titleGetPhotoChak = @"Cканировать QR";
+static NSString *const titleCancel = @"Отмена";
+static NSString *const titleMessage = @"message";
+static NSString *const kServerBalamce = @"balance";
+static NSString *const kServerPeding = @"pending";
+static NSString *const kServerType = @"type";
+//----------------------------------------------------------------------------
+static NSString *const kServerOldPassword = @"old_password";
+static NSString *const kServerNewPassword = @"new_password";
+static NSString *const kServerData = @"data";
+static NSString *const kServerCount = @"count";
+static NSString *const kServerImgURL = @"img_url";
+static NSString *const textCameraAlert = @"На снимке должен быть виден весь чек, включая название магазина, дату, номер чека, общую сумму покупки, ФН, ФД, ФП и QR код.";
+static NSString *const dateFormatText = @"dd LLL yyyy";
+static NSString *const textSendPhotoTitle = @"Отправить";
+static NSString *const textAlertFromSending = @"Чек отправлен, сохраняйте чек до завершения проверки, результаты проверки будут доступны в разделе «Чеки»";
+static NSString *const textAlertFromSending2 = @"Чек отправлен, сохраняйте чек до завершения проверки, результаты проверки будут доступны в разделе «Чеки»";
+static NSString *const photoControllerTitle = @"Фото чеков";
+static NSString *const textChange = @"Изменить";
+static NSString *const textDeletePhotoAlert = @"Вы действительно хотите удалить последнее фото?";
+static NSString *const textQuestNotComplete = @"Задание не выполнено. Попробовать еще раз?";
+static NSString *const changePassOldPassPlaceholder = @"Старый пароль";
+static NSString *const changePassNewPassPlaceholder = @"Новый пароль";
+static NSString *const changePassNewPassPlaceholder2 = @"Повторите новый пароль";
+static NSString *const passwordChangeSucssesText = @"Пароль изменен успешно!";
+static NSString *const passwordIsDifferentText = @"Пароли не совпадают";
+static NSString *const passworsdIsEmptyText = @"Поля не должны быть пустыми";
+static NSString *const socialQuestText = @"Задание не выполнено. Попробовать еще раз?";
+static NSString *const socRegMailError = @"Эта эл. почта уже используется";
+static NSString *const socMailNotFormmat = @"Неверный формат эл. почты";
+static NSString *const changePhonePlaceholder = @"Новый номер телефона";
+static NSString *const phoneError = @"Этот номер телефона уже используется";
+static NSString *const phoneNotFormmat = @"Неверный номер телефона";
+static NSString *const notConfermEmail = @"Ваш адрес электронной почты не подтвержден. Проверьте вашу почту";
+static NSString *const cancelNewMail = @"Вы хотите отменить изменение или закрыть окно ?";
+static NSString *const okEmail = @"Ваш эл. адрес подтвержден";
+static NSString *const notEmail = @"Ваш эл. адрес не подтвержден";
+static NSString *const errorCode = @"Некорpектный код";
+static NSString *const sendCode = @"Код отправлен";
+static NSString *const socErrorConnect = @"Ошибка социальной сети";
+static NSString *const errorPass = @"Неверный пароль";
+static NSString *const sendPassToMAil = @"Пароль был отправлен на указанную почту";
+static NSString *const fieldsEmpty = @"Поля заполнены неверно";
+static NSString *const footerPassText = @"\n На указанную эл.почту или номер телефона будет отправлен новый пароль.";
+static NSString *const footerForgotPass = @"Забыл пароль?";
+static NSString *const footerEmailText = @"\n Укажите реальный адрес электронной почты. На этот адрес будет отправлено письмо для подтверждения";
+static NSString *const footerLastText = @"Нажимая кнопку «Готово», я подтверждаю, что мне уже исполнилось 18 лет и я ознакомился и согласен с пользовательским соглашением, включая лицензионное соглашение и политику конфиденциальности.";
+static NSString *const footerLastText1 = @"Нажимая кнопку «Готово», я подтверждаю, что мне уже исполнилось 18 лет и я ознакомился и согласен с ";
+static NSString *const shopsTitle = @"Ближайшие магазины";
+static NSString *const cuponsTitle = @"Купоны";
+static NSString *const emptyCuponsText = @"Нет доступных купонов";
+static NSString *const buyDiscontoTitle = @"Подтверждение покупки";
+static NSString *const selectDiscontText = @"Выберите дисконт";
+static NSString *cameraAccessText = @"Пожалуйста, разрешите использование камеры в настройках для возможности фотографирования чеков";
+static NSString *const emptyDiscontoUnableText = @"Разблокируйте хотя бы один дисконт";
+static NSString *const savedUserDataAlert = @"Ваши данные сохранены!";
+static NSString *const newRquestToSupportDisconto = @"Новый запрос в службу поддержки Дисконто";
+static NSString *const textMessegeSend = @"Спасибо за обращение! Мы свяжемся с вами в ближайшее время.";
+static NSString *const textEmptyMessage = @"Сообщение не должно быть пустым!";
+static NSString *const likeAppText = @"Вы хотите оценить приложение ?";
+static NSString *const extQuestTitle = @"Вы покидаете задание не завершив его!";
+static NSString *const extQuestMessege = @"Вернуться на предыдущий экран?";
+static NSString *const unlockDiscontButtonTitle = @"Разблокировать дисконт";
+static NSString *const changePhoneAlertText = @"Для смены номера нужно подтверждение старого номера. Если у вас нет доступа к старому номеру, обратитесь в службу поддержки.";
+static NSString *const changePhoneFooter2 = @"Укажите ваш новый номер телефона, на этот номер будет отправлено смс с кодом подтверждения";
+
+#pragma mark - ENUM
+typedef NS_ENUM(NSUInteger, PreviewCellsType) {
+    pLogin = 0,
+    pRegistration
+};
+
+typedef NS_ENUM(NSUInteger, SingleProductSections) {
+    sHeader = 0,
+    sName,
+    sPrice,
+    sDescription,
+    sFullDescriptin,
+  //  sInShop,
+    sLegal,
+    sSectionCount
+};
+
+typedef NS_ENUM(NSInteger, QuestType) {
+    video = 1,
+    fact,
+    question,
+    visit,
+    share,
+    countTyps
+};
+
+typedef NS_ENUM(NSInteger, PayType) {
+    
+    phonePay = 1,
+    electroPay,
+    cardPay
+};
+
+typedef NS_ENUM(NSInteger, CacheScreen) {
+    moneyOut = 0,
+    inProgress,
+    history
+};
+
+typedef NS_ENUM(NSInteger, ProductStatus) {
+    unlocedProductStatus = 0,
+    locedProductStatus,
+    goToPhotoStatus,
+    inProgressProductStatus
+};
+
+typedef NS_ENUM(NSInteger, cameraButtons) {
+    galeryAction = 0,
+    takePhotoAction,
+    photoListAction
+};
+
+typedef NS_ENUM(NSInteger, discontStatus) {
+    DisLocked = 0,
+    DisInprogress = 3
+};
+
+typedef NS_ENUM(NSInteger, phoneStatus) {
+    PEmpty = 0,
+    PFull,
+    PWait
+};
+
+typedef NS_ENUM(NSInteger, stateControl) {
+    accepted = 0,
+    disable,
+    inprogress
+};

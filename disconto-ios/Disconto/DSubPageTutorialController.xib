@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DSubPageTutorialController">
+            <connections>
+                <outlet property="actionButton" destination="D5Y-k0-bMT" id="sTC-2G-TBV"/>
+                <outlet property="tutorialImageView" destination="lCJ-p1-rEU" id="Ffl-we-zd3"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lCJ-p1-rEU">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" red="0.95531362295150757" green="0.31019383668899536" blue="0.063501462340354919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5Y-k0-bMT">
+                    <rect key="frame" x="37.5" y="594" width="300" height="40"/>
+                    <color key="backgroundColor" red="0.96078431369999995" green="0.29803921570000003" blue="0.050980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="DYR-dV-nrq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Участвовать">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="showWebView:" destination="-1" eventType="touchUpInside" id="XmM-2y-ots"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="D5Y-k0-bMT" firstAttribute="width" secondItem="lCJ-p1-rEU" secondAttribute="width" multiplier="0.8" id="0Ok-ww-O4c"/>
+                <constraint firstItem="D5Y-k0-bMT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="F85-aq-YvK"/>
+                <constraint firstAttribute="bottom" secondItem="D5Y-k0-bMT" secondAttribute="bottom" constant="33" id="Mzo-KZ-BqR"/>
+                <constraint firstItem="lCJ-p1-rEU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Ok9-mY-dFG"/>
+                <constraint firstItem="lCJ-p1-rEU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="acA-J7-qdz"/>
+                <constraint firstAttribute="bottom" secondItem="lCJ-p1-rEU" secondAttribute="bottom" id="nje-2P-6o2"/>
+                <constraint firstAttribute="trailing" secondItem="lCJ-p1-rEU" secondAttribute="trailing" id="tzi-Vg-Fpt"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,6 @@
+module Pods_Disconto [system] {
+  umbrella header "Pods-Disconto-umbrella.h"
+
+  export *
+  module * { export * }
+}

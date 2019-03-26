@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9VT-SF-On8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJ5-Dj-uVa">
+                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.29803921570000003" blue="0.050980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H0U-Yh-ylU">
+                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="xxx-O2-oC2">
+                                <rect key="frame" x="85" y="286" width="206" height="96"/>
+                                <color key="tintColor" red="0.96078431372549022" green="0.1764705882352941" blue="0.027450980392156862" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="206" id="YKi-qe-CGo"/>
+                                    <constraint firstAttribute="height" constant="96" id="fT6-og-s8h"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96078431369999995" green="0.29803921570000003" blue="0.050980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CJ5-Dj-uVa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0SW-Mx-2SM"/>
+                            <constraint firstItem="H0U-Yh-ylU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9no-Iz-DPS"/>
+                            <constraint firstItem="CJ5-Dj-uVa" firstAttribute="height" secondItem="H0U-Yh-ylU" secondAttribute="height" id="IdJ-WE-Cfp"/>
+                            <constraint firstItem="xxx-O2-oC2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JPu-qD-OCn"/>
+                            <constraint firstItem="CJ5-Dj-uVa" firstAttribute="width" secondItem="H0U-Yh-ylU" secondAttribute="width" id="LXt-xQ-Dir"/>
+                            <constraint firstItem="xxx-O2-oC2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qgv-3r-XNi"/>
+                            <constraint firstItem="CJ5-Dj-uVa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ay6-cX-MvW"/>
+                            <constraint firstItem="H0U-Yh-ylU" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="k9m-lR-6ba"/>
+                            <constraint firstItem="H0U-Yh-ylU" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="nWx-oe-NBj"/>
+                            <constraint firstItem="H0U-Yh-ylU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ueh-Mc-LAQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bkc-4h-QmI"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="animatedView" destination="CJ5-Dj-uVa" id="dJn-Xc-aT3"/>
+                        <outlet property="blureView" destination="H0U-Yh-ylU" id="KTE-8P-td7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1027" y="476"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="inR-Vg-8aQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="9VT-SF-On8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" backIndicatorImage="back" id="kjd-mw-bfh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="LH6-9w-EOT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gFs-3b-JO5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="215" y="1136"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="15" height="24"/>
+        <image name="logo" width="834" height="345"/>
+    </resources>
+</document>

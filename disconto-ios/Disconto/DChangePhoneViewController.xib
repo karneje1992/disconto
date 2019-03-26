@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DChangePhoneViewController">
+            <connections>
+                <outlet property="phoneLabel" destination="Xh7-cc-aCf" id="DYm-P8-wWl"/>
+                <outlet property="phoneTextField" destination="FuD-RZ-gjo" id="cOQ-Og-fhe"/>
+                <outlet property="popUpView" destination="ppz-Wf-yi6" id="dLv-Lw-RTD"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ppz-Wf-yi6">
+                    <rect key="frame" x="56" y="217.5" width="262" height="233"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wgo-cr-xN7">
+                            <rect key="frame" x="0.0" y="203" width="131" height="30"/>
+                            <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Отмена">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="cancel:" destination="-1" eventType="touchUpInside" id="hw4-dJ-BDP"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKC-Wa-XCa">
+                            <rect key="frame" x="131" y="203" width="131" height="30"/>
+                            <color key="backgroundColor" red="0.98823529409999999" green="0.3294117647" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Отправить">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="sendEmail:" destination="-1" eventType="touchUpInside" id="1gJ-qI-3SO"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="На этот номер будет отправлено смс с кодом подтверждения" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pq-qv-7bg">
+                            <rect key="frame" x="30.5" y="8" width="202.5" height="61"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DChangePasswordViewController" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FuD-RZ-gjo">
+                            <rect key="frame" x="8" y="147" width="246" height="30"/>
+                            <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                            <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="RLV-ck-E48"/>
+                            </connections>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="phone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xh7-cc-aCf">
+                            <rect key="frame" x="8" y="109" width="246" height="30"/>
+                            <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Wgo-cr-xN7" secondAttribute="bottom" id="4jT-fj-8XU"/>
+                        <constraint firstItem="Xh7-cc-aCf" firstAttribute="height" secondItem="FuD-RZ-gjo" secondAttribute="height" id="8bT-8i-44T"/>
+                        <constraint firstAttribute="trailing" secondItem="FuD-RZ-gjo" secondAttribute="trailing" constant="8" id="9lU-m2-h5f"/>
+                        <constraint firstAttribute="trailing" secondItem="Xh7-cc-aCf" secondAttribute="trailing" constant="8" id="AeW-Oh-DN7"/>
+                        <constraint firstItem="FuD-RZ-gjo" firstAttribute="top" secondItem="Xh7-cc-aCf" secondAttribute="bottom" constant="8" id="CDF-ua-KbJ"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7pq-qv-7bg" secondAttribute="trailing" constant="16" id="GeV-e6-KiM"/>
+                        <constraint firstAttribute="trailing" secondItem="vKC-Wa-XCa" secondAttribute="trailing" id="HuT-fL-1E3"/>
+                        <constraint firstItem="FuD-RZ-gjo" firstAttribute="leading" secondItem="ppz-Wf-yi6" secondAttribute="leading" constant="8" id="IsZ-wQ-0Lu"/>
+                        <constraint firstItem="Wgo-cr-xN7" firstAttribute="width" secondItem="ppz-Wf-yi6" secondAttribute="width" multiplier="0.5" id="Kz8-2i-9Qa"/>
+                        <constraint firstAttribute="bottom" secondItem="vKC-Wa-XCa" secondAttribute="bottom" id="Lls-hL-qfV"/>
+                        <constraint firstItem="Xh7-cc-aCf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7pq-qv-7bg" secondAttribute="bottom" constant="8" id="N2l-vp-ovU"/>
+                        <constraint firstItem="Xh7-cc-aCf" firstAttribute="leading" secondItem="ppz-Wf-yi6" secondAttribute="leading" constant="8" id="NtS-Zh-bsa"/>
+                        <constraint firstItem="7pq-qv-7bg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ppz-Wf-yi6" secondAttribute="leading" constant="16" id="Rpr-pg-Htn"/>
+                        <constraint firstItem="Wgo-cr-xN7" firstAttribute="leading" secondItem="ppz-Wf-yi6" secondAttribute="leading" id="YJn-e6-iz0"/>
+                        <constraint firstItem="vKC-Wa-XCa" firstAttribute="width" secondItem="Wgo-cr-xN7" secondAttribute="width" id="gXU-Ky-GuP"/>
+                        <constraint firstItem="vKC-Wa-XCa" firstAttribute="top" secondItem="FuD-RZ-gjo" secondAttribute="bottom" constant="26" id="rlS-Xi-E1o"/>
+                        <constraint firstItem="7pq-qv-7bg" firstAttribute="centerX" secondItem="ppz-Wf-yi6" secondAttribute="centerX" id="zWG-OV-rwi"/>
+                        <constraint firstItem="7pq-qv-7bg" firstAttribute="top" secondItem="ppz-Wf-yi6" secondAttribute="top" constant="8" id="zY2-Pv-IS4"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ppz-Wf-yi6" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.7" id="83v-EY-mm1"/>
+                <constraint firstItem="ppz-Wf-yi6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FgE-UU-6Cq"/>
+                <constraint firstItem="ppz-Wf-yi6" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.35" id="J0F-lo-McF"/>
+                <constraint firstItem="ppz-Wf-yi6" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="dtd-a3-Kum"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

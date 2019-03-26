@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DScannerViewController">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="jlY-Mh-rax"/>
+                <outlet property="viewPreview" destination="Mx5-KD-nfQ" id="ZQM-7f-oJD"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mx5-KD-nfQ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qrBorder" translatesAutoresizingMaskIntoConstraints="NO" id="0C2-jZ-Zvq">
+                    <rect key="frame" x="56.5" y="203" width="262.5" height="262"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="0C2-jZ-Zvq" secondAttribute="height" multiplier="1:1" id="kQN-V7-KSr"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Наведите камеру на QR код на чеке" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6q-pr-wUc">
+                    <rect key="frame" x="8" y="638" width="359" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Mx5-KD-nfQ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0gl-kc-CJ2"/>
+                <constraint firstItem="Mx5-KD-nfQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0kq-Zj-s6L"/>
+                <constraint firstAttribute="trailing" secondItem="Mx5-KD-nfQ" secondAttribute="trailing" id="6nX-VU-z0P"/>
+                <constraint firstAttribute="bottom" secondItem="Mx5-KD-nfQ" secondAttribute="bottom" id="6ua-dF-YFH"/>
+                <constraint firstAttribute="bottom" secondItem="K6q-pr-wUc" secondAttribute="bottom" constant="8" id="7g1-3P-Syk"/>
+                <constraint firstItem="0C2-jZ-Zvq" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="9MO-ub-HVc"/>
+                <constraint firstItem="0C2-jZ-Zvq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="MAt-Gx-ceh"/>
+                <constraint firstAttribute="trailing" secondItem="K6q-pr-wUc" secondAttribute="trailing" constant="8" id="TiU-4B-ZyW"/>
+                <constraint firstItem="K6q-pr-wUc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="WGw-zE-ndt"/>
+                <constraint firstItem="Mx5-KD-nfQ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="gFu-xa-iW6"/>
+                <constraint firstItem="0C2-jZ-Zvq" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.7" id="jHg-fR-8ff"/>
+                <constraint firstItem="Mx5-KD-nfQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yQN-pQ-eSK"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="qrBorder" width="1500" height="1500"/>
+    </resources>
+</document>

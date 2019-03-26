@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DCacameraViewController">
+            <connections>
+                <outlet property="activePhotos" destination="sOm-hh-NPh" id="W4j-At-d6q"/>
+                <outlet property="activity" destination="FH4-1b-G1P" id="Pax-i4-2wV"/>
+                <outlet property="cameraView" destination="bo9-dx-ItH" id="HGB-J3-OgO"/>
+                <outlet property="counterLabel" destination="vth-wY-uHs" id="4h0-gm-vPW"/>
+                <outlet property="galleryButton" destination="e3Z-hd-cAR" id="2QC-ON-GAR"/>
+                <outlet property="splachView" destination="QeR-4F-Fmd" id="96h-oP-e9B"/>
+                <outlet property="takePhotoButton" destination="13e-Sh-seU" id="PkL-sL-kaa"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bo9-dx-ItH">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="587"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="FH4-1b-G1P">
+                    <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="color" red="0.96078431369999995" green="0.29803921570000003" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                </activityIndicatorView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vth-wY-uHs">
+                    <rect key="frame" x="188" y="16" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <color key="textColor" red="0.99891370534896851" green="1" blue="0.21221727132797241" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QeR-4F-Fmd">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="587"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3Z-hd-cAR">
+                    <rect key="frame" x="16" y="609" width="76" height="50"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="Галерея">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="showGallery:" destination="-1" eventType="touchUpInside" id="hl1-5O-Kg1"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13e-Sh-seU">
+                    <rect key="frame" x="163" y="609" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="p9x-aC-P6I"/>
+                        <constraint firstAttribute="width" constant="50" id="tuc-XF-Gqe"/>
+                    </constraints>
+                    <state key="normal" image="photo"/>
+                    <connections>
+                        <action selector="takePhoto:" destination="-1" eventType="touchUpInside" id="nAL-1r-MbK"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOm-hh-NPh">
+                    <rect key="frame" x="251" y="609" width="108" height="50"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="Фото чеков">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="activePhotos:" destination="-1" eventType="touchUpInside" id="i89-so-QU3"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="sOm-hh-NPh" secondAttribute="bottom" constant="8" id="00q-GY-oIg"/>
+                <constraint firstAttribute="trailing" secondItem="sOm-hh-NPh" secondAttribute="trailing" constant="16" id="1eA-Jh-lak"/>
+                <constraint firstItem="sOm-hh-NPh" firstAttribute="height" secondItem="13e-Sh-seU" secondAttribute="height" id="Ai4-er-PsN"/>
+                <constraint firstItem="bo9-dx-ItH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="EgA-s7-FTB"/>
+                <constraint firstItem="bo9-dx-ItH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="I4w-hU-ZJf"/>
+                <constraint firstItem="e3Z-hd-cAR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="MtT-xt-iJK"/>
+                <constraint firstItem="vth-wY-uHs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="16" id="ND0-kp-E29"/>
+                <constraint firstItem="bo9-dx-ItH" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.88" id="UCk-OH-dPI"/>
+                <constraint firstAttribute="trailing" secondItem="bo9-dx-ItH" secondAttribute="trailing" id="Vve-0i-5VE"/>
+                <constraint firstItem="vth-wY-uHs" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="W6f-62-mfU"/>
+                <constraint firstAttribute="bottom" secondItem="13e-Sh-seU" secondAttribute="bottom" constant="8" id="aSs-fe-P74"/>
+                <constraint firstItem="e3Z-hd-cAR" firstAttribute="height" secondItem="13e-Sh-seU" secondAttribute="height" id="aTO-ZX-vwl"/>
+                <constraint firstItem="QeR-4F-Fmd" firstAttribute="width" secondItem="bo9-dx-ItH" secondAttribute="width" id="aV0-eB-HFP"/>
+                <constraint firstItem="13e-Sh-seU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="asX-hu-eqf"/>
+                <constraint firstItem="QeR-4F-Fmd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="oKY-BQ-0NX"/>
+                <constraint firstItem="QeR-4F-Fmd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="pn0-kB-1KO"/>
+                <constraint firstItem="QeR-4F-Fmd" firstAttribute="height" secondItem="bo9-dx-ItH" secondAttribute="height" id="rS6-2e-NUR"/>
+                <constraint firstAttribute="trailing" secondItem="QeR-4F-Fmd" secondAttribute="trailing" id="sEh-KZ-i5d"/>
+                <constraint firstAttribute="bottom" secondItem="e3Z-hd-cAR" secondAttribute="bottom" constant="8" id="upj-KW-iVv"/>
+                <constraint firstItem="bo9-dx-ItH" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="xkw-Gx-RYB"/>
+            </constraints>
+            <point key="canvasLocation" x="304.5" y="446.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="photo" width="132" height="132"/>
+    </resources>
+</document>

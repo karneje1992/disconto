@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DProductsViewController">
+            <connections>
+                <outlet property="collectionView" destination="elR-NO-a8q" id="Owi-Mp-F6d"/>
+                <outlet property="photoButton" destination="LPi-zJ-WXW" id="A4u-N7-7fc"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" restorationIdentifier="DProductsViewController" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="elR-NO-a8q">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="CrH-6x-eeh">
+                        <size key="itemSize" width="150" height="300"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="60"/>
+                        <inset key="sectionInset" minX="2" minY="0.0" maxX="2" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="g51-uK-H2i"/>
+                        <outlet property="delegate" destination="-1" id="nGu-97-iFd"/>
+                    </connections>
+                </collectionView>
+                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPi-zJ-WXW">
+                    <rect key="frame" x="18.5" y="619" width="337.5" height="40"/>
+                    <color key="backgroundColor" red="0.89411764709999997" green="0.2784313725" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="ocJ-nQ-Vfm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
+                    <state key="normal">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="goToPhoto:" destination="-1" eventType="touchUpInside" id="rpj-3o-OHB"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="elR-NO-a8q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0eB-ag-0UH"/>
+                <constraint firstAttribute="bottom" secondItem="LPi-zJ-WXW" secondAttribute="bottom" constant="8" id="Hx7-MJ-CI9"/>
+                <constraint firstItem="LPi-zJ-WXW" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.9" id="KXq-J7-fcH"/>
+                <constraint firstAttribute="trailing" secondItem="elR-NO-a8q" secondAttribute="trailing" id="NMT-iI-CoL"/>
+                <constraint firstItem="elR-NO-a8q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Trv-7r-IbE"/>
+                <constraint firstItem="LPi-zJ-WXW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cNa-q2-1Xg"/>
+                <constraint firstAttribute="bottom" secondItem="elR-NO-a8q" secondAttribute="bottom" id="oJo-qd-ddo"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

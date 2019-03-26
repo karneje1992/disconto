@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Summary View Controller-->
+        <scene sceneID="Txl-dj-4Co">
+            <objects>
+                <viewController storyboardIdentifier="SummaryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gQT-l3-5fZ" customClass="SummaryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PHG-ML-NMs"/>
+                        <viewControllerLayoutGuide type="bottom" id="IzS-pA-SVB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="J1r-Sc-Q8I">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sKA-68-K0Y">
+                                <color key="backgroundColor" red="1" green="0.27370436920000002" blue="0.054296692600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ur-uv-T94">
+                                <connections>
+                                    <outlet property="delegate" destination="gQT-l3-5fZ" id="Jnp-VO-Pmx"/>
+                                </connections>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="zmU-vI-JiR">
+                                <connections>
+                                    <action selector="clickPageControl:" destination="gQT-l3-5fZ" eventType="valueChanged" id="d15-79-xLa"/>
+                                </connections>
+                            </pageControl>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="nKr-d9-fM1">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="206" id="Chy-jo-Yeb"/>
+                                    <constraint firstAttribute="height" constant="96" id="qae-MX-50V"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhK-yH-fDw">
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="21"/>
+                                <state key="normal" title="Старт !">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButtonTapped:" destination="gQT-l3-5fZ" eventType="touchUpInside" id="6Bn-BL-E2h"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.27370436920000002" blue="0.054296692600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zmU-vI-JiR" firstAttribute="trailing" secondItem="3Ur-uv-T94" secondAttribute="trailing" id="4ha-l7-dWl"/>
+                            <constraint firstItem="3Ur-uv-T94" firstAttribute="bottom" secondItem="IzS-pA-SVB" secondAttribute="top" id="AiG-E2-k3G"/>
+                            <constraint firstAttribute="trailing" secondItem="zmU-vI-JiR" secondAttribute="trailing" id="B4N-eW-7gb"/>
+                            <constraint firstItem="sKA-68-K0Y" firstAttribute="leading" secondItem="3Ur-uv-T94" secondAttribute="leading" id="CN2-yf-ySw"/>
+                            <constraint firstItem="yhK-yH-fDw" firstAttribute="centerX" secondItem="zmU-vI-JiR" secondAttribute="centerX" id="Ejo-rY-NjV"/>
+                            <constraint firstItem="sKA-68-K0Y" firstAttribute="top" secondItem="J1r-Sc-Q8I" secondAttribute="top" id="Eyh-EE-zJ0"/>
+                            <constraint firstItem="sKA-68-K0Y" firstAttribute="bottom" secondItem="IzS-pA-SVB" secondAttribute="top" id="Inw-OU-Sl9"/>
+                            <constraint firstItem="nKr-d9-fM1" firstAttribute="top" secondItem="PHG-ML-NMs" secondAttribute="bottom" constant="235" id="KqM-Ke-5Rs"/>
+                            <constraint firstItem="zmU-vI-JiR" firstAttribute="leading" secondItem="J1r-Sc-Q8I" secondAttribute="leading" id="Q1u-0L-sGs"/>
+                            <constraint firstItem="nKr-d9-fM1" firstAttribute="centerX" secondItem="J1r-Sc-Q8I" secondAttribute="centerX" constant="3" id="Vb3-P7-PH5"/>
+                            <constraint firstItem="3Ur-uv-T94" firstAttribute="trailing" secondItem="sKA-68-K0Y" secondAttribute="trailing" id="Zk1-iz-s6v"/>
+                            <constraint firstItem="yhK-yH-fDw" firstAttribute="leading" secondItem="J1r-Sc-Q8I" secondAttribute="leadingMargin" constant="77" id="aF2-kl-cJ4"/>
+                            <constraint firstItem="IzS-pA-SVB" firstAttribute="top" secondItem="zmU-vI-JiR" secondAttribute="bottom" constant="31" id="gci-3a-KkT"/>
+                            <constraint firstItem="3Ur-uv-T94" firstAttribute="leading" secondItem="zmU-vI-JiR" secondAttribute="leading" id="jUa-nq-xbl"/>
+                            <constraint firstItem="3Ur-uv-T94" firstAttribute="top" secondItem="sKA-68-K0Y" secondAttribute="top" id="odg-m7-DfA"/>
+                            <constraint firstItem="IzS-pA-SVB" firstAttribute="top" secondItem="yhK-yH-fDw" secondAttribute="bottom" constant="8" symbolic="YES" id="zF0-my-qp2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="logoImageView" destination="nKr-d9-fM1" id="a00-uL-eBM"/>
+                        <outlet property="myScrollView" destination="3Ur-uv-T94" id="Wpa-Md-BjA"/>
+                        <outlet property="pageControl" destination="zmU-vI-JiR" id="3pB-Oh-xOk"/>
+                        <outlet property="startButton" destination="yhK-yH-fDw" id="QRP-fy-eHh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NAe-i2-OI5" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7734" y="586"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo" width="834" height="345"/>
+    </resources>
+</document>

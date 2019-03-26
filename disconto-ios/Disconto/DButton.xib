@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5wH-zv-8NZ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="533.5"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evv-b2-gxW">
+                    <rect key="frame" x="169.5" y="541.5" width="36" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="5wH-zv-8NZ" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="2Ek-M4-5jj"/>
+                <constraint firstItem="Evv-b2-gxW" firstAttribute="top" secondItem="5wH-zv-8NZ" secondAttribute="bottom" constant="8" id="ARR-L8-tXs"/>
+                <constraint firstItem="5wH-zv-8NZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="H0j-hn-oSs"/>
+                <constraint firstItem="5wH-zv-8NZ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Rwy-pH-FOf"/>
+                <constraint firstItem="5wH-zv-8NZ" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.8" id="hJW-Wx-jFY"/>
+                <constraint firstItem="Evv-b2-gxW" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="uKU-VM-tDG"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

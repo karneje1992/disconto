@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DChangeEmailViewController">
+            <connections>
+                <outlet property="emailLabel" destination="c66-Ow-oaS" id="Z02-rm-WW4"/>
+                <outlet property="emailTextField" destination="fsl-1q-VJP" id="vwu-F7-I0W"/>
+                <outlet property="popUpView" destination="0nj-sX-A9E" id="08u-SN-9y0"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0nj-sX-A9E">
+                    <rect key="frame" x="56" y="200.5" width="262" height="267"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6d-2U-hb3">
+                            <rect key="frame" x="0.0" y="237" width="131" height="30"/>
+                            <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Отмена">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="cancel:" destination="-1" eventType="touchUpInside" id="9cx-iN-cb6"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUq-6x-P3j">
+                            <rect key="frame" x="131" y="237" width="131" height="30"/>
+                            <color key="backgroundColor" red="0.98823529409999999" green="0.3294117647" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Отправить">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="sendEmail:" destination="-1" eventType="touchUpInside" id="bH4-Tv-KZE"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="На указанный вами адрес электронной почты будет отправлено письмо для подтверждения" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htI-Td-pVf">
+                            <rect key="frame" x="30.5" y="8" width="202.5" height="76.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DChangePasswordViewController" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fsl-1q-VJP">
+                            <rect key="frame" x="8" y="181" width="246" height="30"/>
+                            <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="LEy-WY-eH2"/>
+                            </connections>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c66-Ow-oaS">
+                            <rect key="frame" x="8" y="143" width="246" height="30"/>
+                            <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="htI-Td-pVf" firstAttribute="centerX" secondItem="0nj-sX-A9E" secondAttribute="centerX" id="3cN-aL-Ah4"/>
+                        <constraint firstItem="DUq-6x-P3j" firstAttribute="top" secondItem="fsl-1q-VJP" secondAttribute="bottom" constant="26" id="6wG-70-DDQ"/>
+                        <constraint firstItem="c66-Ow-oaS" firstAttribute="top" relation="greaterThanOrEqual" secondItem="htI-Td-pVf" secondAttribute="bottom" constant="8" id="7om-ce-bG5"/>
+                        <constraint firstItem="S6d-2U-hb3" firstAttribute="width" secondItem="0nj-sX-A9E" secondAttribute="width" multiplier="0.5" id="Dml-kb-QiQ"/>
+                        <constraint firstItem="c66-Ow-oaS" firstAttribute="leading" secondItem="0nj-sX-A9E" secondAttribute="leading" constant="8" id="F0L-11-8aQ"/>
+                        <constraint firstItem="fsl-1q-VJP" firstAttribute="leading" secondItem="0nj-sX-A9E" secondAttribute="leading" constant="8" id="Fla-ZP-neo"/>
+                        <constraint firstItem="DUq-6x-P3j" firstAttribute="width" secondItem="S6d-2U-hb3" secondAttribute="width" id="IQd-Qw-ERC"/>
+                        <constraint firstItem="htI-Td-pVf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0nj-sX-A9E" secondAttribute="leading" constant="16" id="Nbf-PO-YXl"/>
+                        <constraint firstAttribute="bottom" secondItem="S6d-2U-hb3" secondAttribute="bottom" id="Wgt-yZ-RWZ"/>
+                        <constraint firstAttribute="bottom" secondItem="DUq-6x-P3j" secondAttribute="bottom" id="a7Z-bq-VpR"/>
+                        <constraint firstAttribute="trailing" secondItem="DUq-6x-P3j" secondAttribute="trailing" id="b5T-8c-oZz"/>
+                        <constraint firstItem="htI-Td-pVf" firstAttribute="top" secondItem="0nj-sX-A9E" secondAttribute="top" constant="8" id="bNX-a4-eBY"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="htI-Td-pVf" secondAttribute="trailing" constant="16" id="edc-Xd-J0A"/>
+                        <constraint firstItem="c66-Ow-oaS" firstAttribute="height" secondItem="fsl-1q-VJP" secondAttribute="height" id="erZ-9j-tOB"/>
+                        <constraint firstAttribute="trailing" secondItem="fsl-1q-VJP" secondAttribute="trailing" constant="8" id="jp8-iJ-xCZ"/>
+                        <constraint firstItem="fsl-1q-VJP" firstAttribute="top" secondItem="c66-Ow-oaS" secondAttribute="bottom" constant="8" id="qUH-Ue-ckz"/>
+                        <constraint firstAttribute="trailing" secondItem="c66-Ow-oaS" secondAttribute="trailing" constant="8" id="uSB-0G-eFk"/>
+                        <constraint firstItem="S6d-2U-hb3" firstAttribute="leading" secondItem="0nj-sX-A9E" secondAttribute="leading" id="xMM-1p-dAC"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="0nj-sX-A9E" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.4" id="48s-Ki-w0X"/>
+                <constraint firstItem="0nj-sX-A9E" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.7" id="RBQ-nv-MZb"/>
+                <constraint firstItem="0nj-sX-A9E" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="e4e-Kx-FOW"/>
+                <constraint firstItem="0nj-sX-A9E" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qLk-A8-RU6"/>
+            </constraints>
+            <point key="canvasLocation" x="251.5" y="245.5"/>
+        </view>
+    </objects>
+</document>
