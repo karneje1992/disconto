@@ -46,7 +46,7 @@
     [StyleChangerClass changeButton:self.goToPhotoButton andController:self andTitle:titleGetPhotoChak];
     self.navigationController.navigationBar.translucent = NO;
     
-   // self.title = titleShops;
+   //\\\\\ self.title = titleShops;
 }
 
 - (void)customSetup
@@ -65,6 +65,7 @@
 
 - (void)revealController:(SWRevealViewController *)revealController animateToPosition:(FrontViewPosition)position{
     
+    [self.view endEditing:YES];
     if (!_singleFingerTap) {
         _singleFingerTap =
         [[UITapGestureRecognizer alloc] initWithTarget:self
@@ -135,7 +136,8 @@
 
 - (void)showProfile{
     
-    DProfileViewController *vc = [[UIStoryboard storyboardWithName:@"DTabBarController" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([DProfileViewController class])];
+    MVVMSettingsViewController *vc = [MVVMSettingsViewController showSettingsWithModelView:[DSettingsViewModel new]];
+
     [self.navigationController pushViewController:vc animated:YES];
 }
 

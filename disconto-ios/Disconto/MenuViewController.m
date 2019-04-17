@@ -218,7 +218,10 @@
             }];
             
             [alertVC addAction: cancel];
-            [self.parentViewController presentViewController: alertVC animated:YES  completion:nil];
+            
+            UIViewController *presentVC = [(UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController visibleViewController].childViewControllers.lastObject.childViewControllers.lastObject.navigationController.childViewControllers.firstObject;
+            
+            [presentVC presentViewController: alertVC animated:YES  completion:nil];
             
         }break;
         default:

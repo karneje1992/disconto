@@ -136,12 +136,11 @@
         
         [bannerView setDelegate: self];
         [bannerView setShowPageControl:NO];
-        [bannerView setAutoScrollEnabled: YES];
-        [bannerView setAutoScrollTimeInterval: 3];
+        //[bannerView setAutoScrollTimeInterval: 20];
         [bannerView setInfiniteScrollEnabled: YES];
         bannerView.selectedDotColor = SYSTEM_COLOR;
         bannerView.backgroundColor = [UIColor clearColor];
-        
+        [bannerView setAutoScrollEnabled: YES];
         [headerView.subviews.firstObject addSubview: bannerView];
 
     }

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DSuperViewController.h"
 
-@interface DProfileViewController : DSuperViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface DProfileViewController : DSuperViewController
 
 @property (strong, nonatomic) IBOutlet UIButton *photoButton;
 @property (strong, nonatomic) IBOutlet UIButton *messageButton;

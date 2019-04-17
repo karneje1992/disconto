@@ -207,15 +207,15 @@
                         <viewControllerLayoutGuide type="bottom" id="tqM-3R-rRR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="D18-L4-9jk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="klD-1Z-Ce5">
-                                <rect key="frame" x="0.0" y="129" width="375" height="494"/>
+                                <rect key="frame" x="0.0" y="65" width="375" height="538"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SWf-HI-hsV">
-                                <rect key="frame" x="0.0" y="64" width="375" height="65"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coins" translatesAutoresizingMaskIntoConstraints="NO" id="BOy-fR-2iL">
                                         <rect key="frame" x="16" y="16.5" width="32.5" height="32.5"/>
@@ -270,12 +270,12 @@
                             <constraint firstItem="SWf-HI-hsV" firstAttribute="leading" secondItem="D18-L4-9jk" secondAttribute="leading" id="pUc-na-qca"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Вывод денег" id="10j-G0-oT2">
                         <barButtonItem key="backBarButtonItem" title=" " id="vSz-bV-rEV"/>
                         <barButtonItem key="leftBarButtonItem" image="menu" id="7Q1-pt-YTO"/>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="balanceLabel" destination="KEW-Pg-Tes" id="gFs-rK-dS5"/>
                         <outlet property="contentView" destination="klD-1Z-Ce5" id="pfC-Kq-2A1"/>
@@ -558,50 +558,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ano-aR-pLc">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="keO-Y9-zsA">
-                                    <size key="itemSize" width="150" height="207"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="60"/>
-                                    <inset key="sectionInset" minX="2" minY="10" maxX="2" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="c2u-IE-Ag2">
-                                    <rect key="frame" x="0.0" y="10" width="375" height="60"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionReusableView>
-                                <connections>
-                                    <outlet property="dataSource" destination="WqD-gl-Hd5" id="fRF-Ly-dtA"/>
-                                    <outlet property="delegate" destination="WqD-gl-Hd5" id="L0o-6S-kM3"/>
-                                </connections>
-                            </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24G-Rq-j75">
-                                <rect key="frame" x="37.5" y="619" width="300" height="40"/>
-                                <color key="backgroundColor" red="0.89411764709999997" green="0.2784313725" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="g5z-mf-zbh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
-                                <state key="normal">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="goToPhoto:" destination="WqD-gl-Hd5" eventType="touchUpInside" id="Bv8-ON-TwC"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5WY-me-bz3">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="NW2-Qk-ICF" firstAttribute="top" secondItem="ano-aR-pLc" secondAttribute="bottom" id="4pP-PT-ush"/>
-                            <constraint firstItem="NW2-Qk-ICF" firstAttribute="top" secondItem="24G-Rq-j75" secondAttribute="bottom" constant="8" id="7cP-yt-1tO"/>
-                            <constraint firstItem="24G-Rq-j75" firstAttribute="width" secondItem="rKp-UA-dUB" secondAttribute="width" multiplier="0.8" id="Jvq-wa-SnZ"/>
-                            <constraint firstAttribute="trailing" secondItem="ano-aR-pLc" secondAttribute="trailing" id="OJx-aN-DgZ"/>
-                            <constraint firstItem="ano-aR-pLc" firstAttribute="top" secondItem="rKp-UA-dUB" secondAttribute="top" id="TnP-p5-3xO"/>
-                            <constraint firstItem="24G-Rq-j75" firstAttribute="centerX" secondItem="rKp-UA-dUB" secondAttribute="centerX" id="ZBI-B7-wcj"/>
-                            <constraint firstItem="ano-aR-pLc" firstAttribute="leading" secondItem="rKp-UA-dUB" secondAttribute="leading" id="suG-iA-apb"/>
+                            <constraint firstItem="NW2-Qk-ICF" firstAttribute="top" secondItem="5WY-me-bz3" secondAttribute="bottom" id="2IX-fN-pvf"/>
+                            <constraint firstItem="5WY-me-bz3" firstAttribute="leading" secondItem="rKp-UA-dUB" secondAttribute="leading" id="Aen-FY-8Tc"/>
+                            <constraint firstItem="5WY-me-bz3" firstAttribute="top" secondItem="HE7-qx-kxm" secondAttribute="bottom" id="K1w-2B-30y"/>
+                            <constraint firstAttribute="trailing" secondItem="5WY-me-bz3" secondAttribute="trailing" id="UgH-qa-z3f"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -609,8 +577,7 @@
                         <barButtonItem key="leftBarButtonItem" image="menu" id="Zug-GG-VP8"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="collectionView" destination="ano-aR-pLc" id="4wN-CE-roN"/>
-                        <outlet property="photoButton" destination="24G-Rq-j75" id="O34-Rt-Z5N"/>
+                        <outlet property="chaildView" destination="5WY-me-bz3" id="KzQ-gO-jp5"/>
                         <outlet property="revealButtonItem" destination="Zug-GG-VP8" id="gnl-g6-tBJ"/>
                     </connections>
                 </viewController>

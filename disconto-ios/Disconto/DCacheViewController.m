@@ -121,7 +121,7 @@
 - (IBAction)money:(id)sender {
     
     _screen = moneyOut;
-    [self activeButton:self.moneyButton];
+ //   [self activeButton:self.moneyButton];
     [DUserModel updateProfileWithCallBack:^(DUserModel *resault) {
         
         DMoneyViewController *vc = [DMoneyViewController showMoneyControllerWithUser:resault];

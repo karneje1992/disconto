@@ -31,16 +31,25 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     
+    UINavigationController *nav;
+    if (self.parentViewController.navigationController) {
+        
+       nav  = self.parentViewController.navigationController;
+        
+    }else{
+        
+        nav = self.navigationController;
+    }
     if(self.alternative){
-        self.navigationController.navigationBar.barTintColor = SYSTEM_NAV;
+        nav.navigationBar.barTintColor = SYSTEM_NAV;
         UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithTitle:titleCancel style:UIBarButtonItemStylePlain target:self action:@selector(back)];
-        self.navigationItem.leftBarButtonItem = back;
+        self.parentViewController.navigationItem.leftBarButtonItem = back;
     }
     self.nextButton = [[UIBarButtonItem alloc] initWithTitle:@"Отправить" style:UIBarButtonItemStylePlain target:self action:@selector(sendMessage:)];
-    self.navigationItem.rightBarButtonItem = self.nextButton;
+    self.parentViewController.navigationItem.rightBarButtonItem = self.nextButton;
     self.nextButton.enabled = NO;
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.navigationController.navigationBarHidden = NO;
+    nav.navigationBar.tintColor = [UIColor whiteColor];
+    nav.navigationBarHidden = NO;
     [self setTitle:@"Сообщение"];
     
     [super viewWillAppear:animated];

@@ -1,1 +1,0 @@
-../../../MXBannerView/MXBannerView/MXBannerCollectionCell.h

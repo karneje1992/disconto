@@ -54,7 +54,15 @@ static NSString *const plaseHolderPhone= @"Телефон";
     [self.activeController.view setBackgroundColor:SYSTEM_COLOR];
     [self.activeController setTitle:@"Профиль"];
     UIBarButtonItem *flipButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save)];
-    self.activeController.navigationItem.rightBarButtonItem = flipButton;
+    
+    if ([self.activeController.parentViewController isKindOfClass: [DProfileViewController class]]){
+        
+        self.activeController.parentViewController.navigationItem.rightBarButtonItem = flipButton;
+    }else{
+        self.activeController.navigationItem.rightBarButtonItem = flipButton;
+    }
+        
+    
     UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"Закрыть" style:UIBarButtonItemStylePlain target:self action:@selector(back)];
                                //initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(back)];
     self.activeController.navigationItem.leftBarButtonItem = button;

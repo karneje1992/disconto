@@ -74,11 +74,11 @@
 
 - (void)loadNewBanner {
     
-    [DProductModel getNewAllProductsWithCollectionView:nil skip:0 category:0 andCallBack:^(NSArray *array) {
-        
-        _modelsArray = array.mutableCopy;
-        
-    }];
+//    [DProductModel getNewAllProductsWithCollectionView:nil skip:0 category:0 andCallBack:^(NSArray *array) {
+//        
+//        _modelsArray = array.mutableCopy;
+//        
+//    }];
     
 }
 

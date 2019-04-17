@@ -203,7 +203,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return tableView.bounds.size.height*0.27;
+    return tableView.bounds.size.height*0.2;
 }
 
 - (CGFloat )tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{

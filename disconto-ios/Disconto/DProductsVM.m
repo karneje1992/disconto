@@ -99,8 +99,12 @@
 
     [DProductModel getNewAllProductsWithCollectionView:nil skip:0 category:_categoryModel andCallBack:^(NSArray *array) {
         
-        _modelsArray = array.mutableCopy;
-        [_collectionView reloadData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //tell the main UI thread here
+            _modelsArray = array.mutableCopy;
+            [_collectionView reloadData];
+        });
+
     }];
 }
 

@@ -14,6 +14,11 @@
 		0A70B60E22418B2300F01588 /* ProductsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A70B60C22418B2300F01588 /* ProductsListViewController.xib */; };
 		0AA2381F2242CC1B00C26254 /* ProductForOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA2381D2242CC1B00C26254 /* ProductForOrderTableViewCell.m */; };
 		0AA238202242CC1B00C26254 /* ProductForOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AA2381E2242CC1B00C26254 /* ProductForOrderTableViewCell.xib */; };
+		0AB14CC6224BF3DD008A06E5 /* MXImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB14CC0224BF3DB008A06E5 /* MXImage.m */; };
+		0AB14CC7224BF3DD008A06E5 /* MXBannerCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB14CC1224BF3DB008A06E5 /* MXBannerCollectionCell.m */; };
+		0AB14CC8224BF3DD008A06E5 /* MXBannerCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AB14CC2224BF3DC008A06E5 /* MXBannerCollectionCell.xib */; };
+		0AB14CC9224BF3DD008A06E5 /* MXImageBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB14CC4224BF3DD008A06E5 /* MXImageBox.m */; };
+		0AB14CCA224BF3DD008A06E5 /* MXBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB14CC5224BF3DD008A06E5 /* MXBannerView.m */; };
 		8A0E63D017F3F9F461BCB66F /* libPods-Disconto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D925E4ACD95BA056063D74 /* libPods-Disconto.a */; };
 		910DB8361DED8464006EC905 /* DCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910DB8321DED8464006EC905 /* DCircleViewController.m */; };
 		910DB8371DED8464006EC905 /* DCircleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 910DB8331DED8464006EC905 /* DCircleViewController.xib */; };
@@ -365,6 +370,15 @@
 		0AA2381C2242CC1B00C26254 /* ProductForOrderTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductForOrderTableViewCell.h; sourceTree = "<group>"; };
 		0AA2381D2242CC1B00C26254 /* ProductForOrderTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductForOrderTableViewCell.m; sourceTree = "<group>"; };
 		0AA2381E2242CC1B00C26254 /* ProductForOrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductForOrderTableViewCell.xib; sourceTree = "<group>"; };
+		0AB14CBD224BF3D9008A06E5 /* MXImageBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXImageBox.h; sourceTree = "<group>"; };
+		0AB14CBE224BF3D9008A06E5 /* MXImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXImage.h; sourceTree = "<group>"; };
+		0AB14CBF224BF3DA008A06E5 /* MXBannerCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXBannerCollectionCell.h; sourceTree = "<group>"; };
+		0AB14CC0224BF3DB008A06E5 /* MXImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXImage.m; sourceTree = "<group>"; };
+		0AB14CC1224BF3DB008A06E5 /* MXBannerCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXBannerCollectionCell.m; sourceTree = "<group>"; };
+		0AB14CC2224BF3DC008A06E5 /* MXBannerCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MXBannerCollectionCell.xib; sourceTree = "<group>"; };
+		0AB14CC3224BF3DC008A06E5 /* MXBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXBannerView.h; sourceTree = "<group>"; };
+		0AB14CC4224BF3DD008A06E5 /* MXImageBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXImageBox.m; sourceTree = "<group>"; };
+		0AB14CC5224BF3DD008A06E5 /* MXBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXBannerView.m; sourceTree = "<group>"; };
 		4B7A7F03AF07F97987D23427 /* Pods-Disconto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disconto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Disconto/Pods-Disconto.debug.xcconfig"; sourceTree = "<group>"; };
 		775FC52F7B492054F1CAD05A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		910DB8311DED8464006EC905 /* DCircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCircleViewController.h; sourceTree = "<group>"; };
@@ -996,6 +1010,22 @@
 				0A70B60C22418B2300F01588 /* ProductsListViewController.xib */,
 			);
 			name = ProductsListViewController;
+			sourceTree = "<group>";
+		};
+		0AB14CCB224BF3E8008A06E5 /* banner */ = {
+			isa = PBXGroup;
+			children = (
+				0AB14CBF224BF3DA008A06E5 /* MXBannerCollectionCell.h */,
+				0AB14CC1224BF3DB008A06E5 /* MXBannerCollectionCell.m */,
+				0AB14CC2224BF3DC008A06E5 /* MXBannerCollectionCell.xib */,
+				0AB14CC3224BF3DC008A06E5 /* MXBannerView.h */,
+				0AB14CC5224BF3DD008A06E5 /* MXBannerView.m */,
+				0AB14CBE224BF3D9008A06E5 /* MXImage.h */,
+				0AB14CC0224BF3DB008A06E5 /* MXImage.m */,
+				0AB14CBD224BF3D9008A06E5 /* MXImageBox.h */,
+				0AB14CC4224BF3DD008A06E5 /* MXImageBox.m */,
+			);
+			name = banner;
 			sourceTree = "<group>";
 		};
 		23EB6470FC098D837157BB31 /* Frameworks */ = {
@@ -2299,6 +2329,7 @@
 		CE0E0C051CE32DCF00331294 /* Disconto */ = {
 			isa = PBXGroup;
 			children = (
+				0AB14CCB224BF3E8008A06E5 /* banner */,
 				910F981921222A5000D446EB /* QRScanner */,
 				91CDF5E81F3C3393007983C5 /* Local Offer */,
 				91DE519B1F2B666C00D14D12 /* Capcha */,
@@ -2989,6 +3020,7 @@
 				CE38B13E1D379DE7009316A3 /* DButton.xib in Resources */,
 				CE85C5C81D841ABD00ADA4F5 /* DImageTableViewCell.xib in Resources */,
 				91AFAD491F024213007ADDD5 /* DPhoneTableViewCell.xib in Resources */,
+				0AB14CC8224BF3DD008A06E5 /* MXBannerCollectionCell.xib in Resources */,
 				CE2EBF981CFC63FA0089B723 /* DPayListTableViewCell.xib in Resources */,
 				91E2753F1CFCF736003E6216 /* DHistoryTableViewController.xib in Resources */,
 				CE0557791D3F625C00B868BA /* DTutorialViewController.xib in Resources */,
@@ -3119,7 +3151,6 @@
 				"${PODS_ROOT}/CCTextFieldEffects/CCTextFieldEffects/pencil.png",
 				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-				"${PODS_ROOT}/MXBannerView/MXBannerView/MXBannerCollectionCell.xib",
 				"${PODS_CONFIGURATION_BUILD_DIR}/NYTPhotoViewer/NYTPhotoViewer.bundle",
 				"${PODS_ROOT}/PEPhotoCropEditor/Resources/PEPhotoCropEditor.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
@@ -3131,7 +3162,6 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pencil.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MXBannerCollectionCell.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NYTPhotoViewer.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PEPhotoCropEditor.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
@@ -3246,6 +3276,7 @@
 				CE285F841CF2E4C40004D79B /* DAnswerCell.m in Sources */,
 				CE5BE5431D23ADE400DBADB4 /* DSelectiorViewController.m in Sources */,
 				91E275471CFCFCB3003E6216 /* DHistoryModel.m in Sources */,
+				0AB14CCA224BF3DD008A06E5 /* MXBannerView.m in Sources */,
 				91AFAD761F025DB1007ADDD5 /* DSerialTableViewCell.m in Sources */,
 				CE05577E1D3F63B600B868BA /* DSubPageTutorialController.m in Sources */,
 				91D250961F0E2494009B65FD /* DTextTableViewCell.m in Sources */,
@@ -3270,6 +3301,7 @@
 				CE0BD53E1CEC66A000A49CE1 /* DShopModel.m in Sources */,
 				CEE6382E1CF71268007B654C /* DChangePasswordViewController.m in Sources */,
 				91D8A54A1CF0EFD7005B8C69 /* DColorTextCell.m in Sources */,
+				0AB14CC6224BF3DD008A06E5 /* MXImage.m in Sources */,
 				9172C9AF1E128E9400331D05 /* DListTableViewCell.m in Sources */,
 				914C2A7C1CF2349D00DE1E0A /* DShowWebSiteController.m in Sources */,
 				91CDF5F51F3C4DEB007983C5 /* DLocalOfferPresenter.m in Sources */,
@@ -3312,6 +3344,7 @@
 				CE5A99311D3399EA008A98B0 /* DVerificationModel.m in Sources */,
 				91CBE73E1F00F52100D5F2BB /* DPaymentPresenter.m in Sources */,
 				CE0B50351CEB4E31007C8081 /* DProductsViewController.m in Sources */,
+				0AB14CC7224BF3DD008A06E5 /* MXBannerCollectionCell.m in Sources */,
 				91AFAD481F024213007ADDD5 /* DPhoneTableViewCell.m in Sources */,
 				CE640FD91CFDDB5D0024F557 /* ParallaxScrollingFramework.m in Sources */,
 				91D250B01F0E440A009B65FD /* DPostCodeTableViewCellPresenter.m in Sources */,
@@ -3369,6 +3402,7 @@
 				9192CDBB1DFEB0E600FEB2D1 /* DNavigationBarModel.m in Sources */,
 				CE1C849F1D6723A40017EF99 /* CollectionViewCell.m in Sources */,
 				CEC4CED21D26808000488BBE /* OverlayViewController.m in Sources */,
+				0AB14CC9224BF3DD008A06E5 /* MXImageBox.m in Sources */,
 				91B7A1C41E24D6CE00F04FC0 /* DOfferViewController.m in Sources */,
 				91D250A01F0E2557009B65FD /* DTextTableViewCellIterator.m in Sources */,
 				91D250A51F0E2577009B65FD /* DTextTableViewCellRoute.m in Sources */,

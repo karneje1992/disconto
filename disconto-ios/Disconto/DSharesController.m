@@ -33,12 +33,14 @@
     self.navigationController.navigationBar.barTintColor = SYSTEM_NAV;
     [self.navigationItem setTitle:@"Акции"];
         [DOfferModel getPromosWithCallBack:^(NSArray<DOfferModel *> *models) {
-    
-            DOfferViewController *vc = [DOfferViewController showOffersWithViewModel:[DOfferViewModel showOffers:models]];
-            [vc setParentTitle:self.navigationItem.title];
-            [self addChildViewController:vc];
-            vc.view.frame = self.view.bounds;
-            [self.view addSubview:vc.view];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //tell the main UI thread here
+                DOfferViewController *vc = [DOfferViewController showOffersWithViewModel:[DOfferViewModel showOffers:models]];
+                [vc setParentTitle:self.navigationItem.title];
+                [self addChildViewController:vc];
+                vc.view.frame = self.view.bounds;
+                [self.view addSubview:vc.view];
+            });
         }];
 }
 

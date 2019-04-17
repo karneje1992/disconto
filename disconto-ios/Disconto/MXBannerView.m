@@ -14,7 +14,7 @@
 #import <SDWebImage/UIImage+GIF.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
-NSTimeInterval const kMXMinTimeInterval = 2.0f;
+NSTimeInterval const kMXMinTimeInterval = 1.0f;
 NSUInteger const kMXImageTimes = 150;
 NSString * const kMXCellID = @"MXBannerCollectionCell";
 
@@ -351,7 +351,7 @@ NSString * const kMXCellID = @"MXBannerCollectionCell";
 
 - (void)setupTimer:(id)userInfo {
     [self invalidateTimer];
-    [self setTimer:[NSTimer timerWithTimeInterval:kMXMinTimeInterval target:self selector:@selector(changeImage) userInfo:userInfo repeats:YES]];
+    [self setTimer:[NSTimer timerWithTimeInterval:2.5 target:self selector:@selector(changeImage) userInfo:userInfo repeats:YES]];
     
     [[NSRunLoop mainRunLoop] addTimer:[self timer] forMode:NSRunLoopCommonModes];
 }
@@ -369,18 +369,15 @@ NSString * const kMXCellID = @"MXBannerCollectionCell";
 
 - (void)autoChangeImage:(UICollectionView *)collectionView {
 
-    
     if ([self actualItemCount]) {
         NSUInteger currentIndex = [[self collectionView] contentOffset].x / [[self flowLayout] itemSize].width;
         
         NSUInteger nextIndex = currentIndex + 1;
-       
-            if (nextIndex >= [self actualItemCount]) {
-                [self showFirstImagePageInCollectionView:[self collectionView] animated:YES];
-            } else {
-                [[self collectionView] scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:nextIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
-            }
-
+        if (nextIndex >= [self actualItemCount]) {
+            [self showFirstImagePageInCollectionView:[self collectionView] animated:YES];
+        } else {
+            [[self collectionView] scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:nextIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+        }
     }
 }
 
@@ -428,13 +425,7 @@ NSString * const kMXCellID = @"MXBannerCollectionCell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
     MXBannerCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kMXCellID forIndexPath:indexPath];
-    if (![indexPath item]) {
-        
-        return cell;
-    }
     if ([self imageBox]) {
         NSUInteger actualItemIndex = 0;
         if ([self isInfiniteScrollEnabled]) {
