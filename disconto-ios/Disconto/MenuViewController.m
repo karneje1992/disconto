@@ -284,7 +284,7 @@
     
     DMenuTableViewCell *messageCell = [DMenuTableViewCell getCellForTableView:self.tableView andClassCellString:NSStringFromClass([DMenuTableViewCell class])];
     messageCell.iconImageView.image = [UIImage imageNamed:@"message"];
-    messageCell.titleLabel.text = @"История";
+    messageCell.titleLabel.text = @"Сообщения";
     
     [_settingsCells addObject:messageCell];
     

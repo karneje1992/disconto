@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -26,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEG-i6-Sl3">
-                    <rect key="frame" x="37" y="285" width="300" height="30"/>
+                    <rect key="frame" x="37.5" y="285" width="300" height="30"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" title="Зарегистрироваться через email">
@@ -36,14 +34,14 @@
                         <action selector="reg:" destination="-1" eventType="touchUpInside" id="Ivv-fi-10z"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRk-d1-1pU">
-                    <rect key="frame" x="67" y="331" width="240" height="0.0"/>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRk-d1-1pU">
+                    <rect key="frame" x="67.5" y="331" width="240" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ib-Md-fj3">
-                    <rect key="frame" x="37" y="617" width="300" height="30"/>
+                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ib-Md-fj3">
+                    <rect key="frame" x="37.5" y="617" width="300" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" title="Написать в поддержку">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -53,13 +51,13 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="t9O-C0-Fav">
-                    <rect key="frame" x="120" y="82.5" width="134" height="134"/>
+                    <rect key="frame" x="120.5" y="82.5" width="134" height="134"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="134" id="AVP-Zl-JJZ"/>
                         <constraint firstAttribute="height" constant="134" id="Smh-lq-tZ3"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1c-D6-c2f">
+                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1c-D6-c2f">
                     <rect key="frame" x="141" y="347" width="93" height="93.5"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="e1c-D6-c2f" secondAttribute="height" multiplier="1:1" id="W6o-8K-8E8"/>
@@ -69,8 +67,8 @@
                         <action selector="fb:" destination="-1" eventType="touchUpInside" id="Fm6-B7-cfy"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sHz-6M-oj1">
-                    <rect key="frame" x="37" y="347" width="93" height="93.5"/>
+                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sHz-6M-oj1">
+                    <rect key="frame" x="36.5" y="347" width="93.5" height="93.5"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="sHz-6M-oj1" secondAttribute="height" multiplier="1:1" id="keQ-cL-94i"/>
                     </constraints>
@@ -79,8 +77,8 @@
                         <action selector="vk:" destination="-1" eventType="touchUpInside" id="bVX-1e-XCi"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2D-7H-EgW">
-                    <rect key="frame" x="245" y="347" width="93" height="93.5"/>
+                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2D-7H-EgW">
+                    <rect key="frame" x="245" y="347" width="93.5" height="93.5"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="W2D-7H-EgW" secondAttribute="height" multiplier="1:1" id="FrF-iu-D2W"/>
                     </constraints>
