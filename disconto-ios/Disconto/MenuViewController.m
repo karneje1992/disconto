@@ -24,7 +24,12 @@
     self.settingsCells = @[].mutableCopy;
     self.exitCells = @[].mutableCopy;
 
-    
+    self.label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width, 180)];
+    self.label.alpha = 0;
+    self.label.numberOfLines = 2;
+    self.label.text = [NSString stringWithFormat:@"Версия\n%@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
+    self.label.textAlignment = NSTextAlignmentCenter;
+    self.label.textColor = UIColor.whiteColor;
     [self initCells];
     [[self tableView] reloadData];
 }
@@ -76,6 +81,29 @@
     return section == menuDefaultSection ? 100 : 20;
     
 }
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    
+    if (section == 2) {
+        
+        return self.label;
+    } else {
+        
+        UIView *empty = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 180)];
+        empty.alpha = 0;
+        return empty;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    
+    if (section == 2) {
+        return 180;
+    } else {
+        return 1;
+    }
+}
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     
     UIView *headerView = [[UIView alloc] init];
@@ -177,15 +205,15 @@
     
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    
-    return [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 180)];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    
-    return  0;
-}
+//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+//
+//    return [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 180)];
+//}
+//
+//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+//
+//    return  0;
+//}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -210,18 +238,20 @@
             });
             break;
         case 999:{
-            UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"Версия" message:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"] preferredStyle:UIAlertControllerStyleAlert ];
-            
-            UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"OK" style: UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-                
-                [alertVC dismissViewControllerAnimated: YES completion:nil];
-            }];
-            
-            [alertVC addAction: cancel];
-            
-            UIViewController *presentVC = [(UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController visibleViewController].childViewControllers.lastObject.childViewControllers.lastObject.navigationController.childViewControllers.firstObject;
-            
-            [presentVC presentViewController: alertVC animated:YES  completion:nil];
+            self.label.alpha = 1;
+            [self performSelector:@selector(hideInfo) withObject:nil afterDelay:5.0];
+//            UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"Версия" message:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"] preferredStyle:UIAlertControllerStyleAlert ];
+//
+//            UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"OK" style: UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+//
+//                [alertVC dismissViewControllerAnimated: YES completion:nil];
+//            }];
+//
+//            [alertVC addAction: cancel];
+//
+//            UIViewController *presentVC = [(UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController visibleViewController].childViewControllers.lastObject.childViewControllers.lastObject.navigationController.childViewControllers.firstObject;
+//
+//            [presentVC presentViewController: alertVC animated:YES  completion:nil];
             
         }break;
         default:
@@ -311,6 +341,11 @@
     logoutCell.titleLabel.text = titleExit;
     
     [_exitCells addObject:logoutCell];
+}
+
+- (void)hideInfo {
+    
+    self.label.alpha = 0;
 }
 
 @end

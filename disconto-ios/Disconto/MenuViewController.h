@@ -27,4 +27,5 @@ typedef NS_ENUM(NSInteger, menuSegueEnum) {
 @property NSMutableArray *settingsCells;
 @property NSMutableArray *exitCells;
 @property NSArray *messages;
+@property UILabel *label;
 @end

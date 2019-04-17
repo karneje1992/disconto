@@ -50,10 +50,10 @@
                         <action selector="action:" destination="-1" eventType="touchUpInside" id="8WG-HC-LIx"/>
                     </connections>
                 </button>
-                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fiL-wt-IW8">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fiL-wt-IW8">
                     <rect key="frame" x="37.5" y="347" width="300" height="133"/>
                     <subviews>
-                        <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3V-k9-a4f">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3V-k9-a4f">
                             <rect key="frame" x="103.5" y="20" width="93" height="93"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="A3V-k9-a4f" secondAttribute="height" multiplier="1:1" id="qpp-Tv-EsK"/>
@@ -63,7 +63,7 @@
                                 <action selector="fbAction:" destination="-1" eventType="touchUpInside" id="eEb-RJ-Cc2"/>
                             </connections>
                         </button>
-                        <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HkF-ux-Hzn">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HkF-ux-Hzn">
                             <rect key="frame" x="0.0" y="20" width="93.5" height="93"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="HkF-ux-Hzn" secondAttribute="height" multiplier="1:1" id="UGG-9E-sCu"/>
@@ -73,7 +73,7 @@
                                 <action selector="vkAction:" destination="-1" eventType="touchUpInside" id="5wa-K6-vc7"/>
                             </connections>
                         </button>
-                        <button opaque="NO" alpha="0.0" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mq4-2C-1NG">
+                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mq4-2C-1NG">
                             <rect key="frame" x="206.5" y="20" width="93.5" height="93"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="mq4-2C-1NG" secondAttribute="height" multiplier="1:1" id="yOO-ta-ctE"/>
