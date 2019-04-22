@@ -42,7 +42,7 @@
     
    // SHOW_PROGRESS;
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc]
                                         initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", urlString]]];
@@ -261,7 +261,7 @@
 - (void)sendNewGetRequestToServerWith:(NSString *)urlStr callBack:(void (^)(BOOL success, NSDictionary *resault))callBack{
     
     SHOW_PROGRESS;
-    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString: urlStr]];
     [request setHTTPMethod:@"GET"];
     [request setValue:[NSString stringWithFormat:@"ios/%@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]] forHTTPHeaderField:@"App-Version"];
@@ -321,59 +321,59 @@
         }
         HIDE_PROGRESS;
     }] resume];
-    
+    });
 }
 
 - (void)sendNewGetRequestToServerWithCallBack:(void (^)(BOOL success, NSDictionary *resault))callBack{
     
-    SHOW_PROGRESS;
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString: [NSString stringWithFormat:@"%@offers", APMSERVER]]];
-    [request setHTTPMethod:@"GET"];
-    [request setValue:[NSString stringWithFormat:@"ios/%@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]] forHTTPHeaderField:@"App-Version"];
-    [request setValue:@"disconto" forHTTPHeaderField:@"App"];
-    [self getUserAgentRequest:request];
-    
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    configuration.requestCachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
-    
-    self.lastUrl = request.URL.absoluteString;
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-    
-    [[manager dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString: [NSString stringWithFormat:@"%@offers", APMSERVER]]];
+        [request setHTTPMethod:@"GET"];
+        [request setValue:[NSString stringWithFormat:@"ios/%@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]] forHTTPHeaderField:@"App-Version"];
+        [request setValue:@"disconto" forHTTPHeaderField:@"App"];
+        [self getUserAgentRequest:request];
         
-        if ([self hederResponse:response]) {
-            
-            [[[UIAlertView alloc] initWithTitle:@"Доступна новая версия" message:@"" delegate:self cancelButtonTitle:@"Нет" otherButtonTitles:@"Загрузить", nil] show];
-            callBack(NO,@{@"update":@(YES)});
-            
-            RESTART;
-        }
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        configuration.requestCachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
         
-        if (!error) {
-            NSLog(@"Reply JSON: %@", responseObject);
+        self.lastUrl = request.URL.absoluteString;
+        AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+        SHOW_PROGRESS;
+        [[manager dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
             
-            if ([responseObject isKindOfClass:[NSDictionary class]]) {
-                callBack([self responseValidate:responseObject],responseObject);
-            }
-        } else {
-            
-            if (error.code < -1000 && !responseObject[@"status"]) {
+            if ([self hederResponse:response]) {
                 
-                SHOW_MESSAGE(@"Ой! Что-то сломалось :(",
-                             @"Мы уже уведомлены об ошибке и работаем над исправлением.");
-                callBack(NO,@{});
+                [[[UIAlertView alloc] initWithTitle:@"Доступна новая версия" message:@"" delegate:self cancelButtonTitle:@"Нет" otherButtonTitles:@"Загрузить", nil] show];
+                callBack(NO,@{@"update":@(YES)});
                 
-            }else{
-                
-                NSLog(@"Error: %@, %@, %@", error, response, responseObject);
-                callBack([self responseValidate:responseObject],responseObject);
+                RESTART;
             }
             
-        }
-        HIDE_PROGRESS;
-    }] resume];
-    
+            if (!error) {
+                NSLog(@"Reply JSON: %@", responseObject);
+                
+                if ([responseObject isKindOfClass:[NSDictionary class]]) {
+                    callBack([self responseValidate:responseObject],responseObject);
+                }
+            } else {
+                
+                if (error.code < -1000 && !responseObject[@"status"]) {
+                    
+                    SHOW_MESSAGE(@"Ой! Что-то сломалось :(",
+                                 @"Мы уже уведомлены об ошибке и работаем над исправлением.");
+                    callBack(NO,@{});
+                    
+                }else{
+                    
+                    NSLog(@"Error: %@, %@, %@", error, response, responseObject);
+                    callBack([self responseValidate:responseObject],responseObject);
+                }
+                
+            }
+            HIDE_PROGRESS;
+        }] resume];
+    });
 }
 
 - (void)sendGetRequestToServerWithDictionary:(NSDictionary *)dictionary andAPICall:(NSString *)api withCallBack:(void (^)(BOOL success, NSDictionary *resault))callBack{

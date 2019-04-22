@@ -29,6 +29,7 @@
         _viewModel = modelView;
         _bannersArray = @[].mutableCopy;
         _urlsStr = @[].mutableCopy;
+        [self.viewModel updateController:self];
         
     }
     return self;
@@ -45,7 +46,7 @@
           forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
                  withReuseIdentifier:@"BannerCollectionReusableView"];
         [DBanerModel getNewBanersWithCallBack:^(NSArray *resault) {
-    
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             self.bannersArray = resault.mutableCopy;
     
             if (resault.count) {
@@ -56,9 +57,14 @@
     
                 }];
     
-                [self.collectionView reloadData];
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    
+                    [self.collectionView reloadData];
+                    SHOW_PROGRESS;
+                });
             }
     
+            });
         }];
 
 }
@@ -72,8 +78,8 @@
 - (void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
-    [_viewModel updateController:self];
 
+    
 }
 
 - (void)didReceiveMemoryWarning {

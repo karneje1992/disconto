@@ -139,25 +139,32 @@
     
     NSString *strUrl = skip == 0 ? [NSString stringWithFormat:@"%@offers", APMSERVER] : [NSString stringWithFormat:@"%@offers/%ld",APMSERVER,(long)skip];
     
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue, ^{
     [[NetworkManeger sharedManager] sendNewGetRequestToServerWith: strUrl callBack:^(BOOL success, NSDictionary *resault) {
         
-        if (success) {
-            
-            if ([resault[kServerData] isKindOfClass:[NSDictionary class]]){
+            if (success) {
                 
-                [array addObject:[[DProductModel alloc] initWithResponse:resault[kServerData]]];
-            }else{
-                
-                for (NSDictionary *list in resault[kServerData]) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if ([resault[kServerData] isKindOfClass:[NSDictionary class]]){
+                        
+                        [array addObject:[[DProductModel alloc] initWithResponse:resault[kServerData]]];
+                    }else{
+                        
+                        for (NSDictionary *list in resault[kServerData]) {
+                            
+                            [array addObject:[[DProductModel alloc] initWithResponse:list]];
+                        }
+                        
+                    }
                     
-                    [array addObject:[[DProductModel alloc] initWithResponse:list]];
-                }
+                    callBack(array);
+                    
+                });
             }
-            
-            
-            callBack(array);
-        }
+
     }];
+    });
 }
 
 + (void)getAllProductsWithCollectionView:(UICollectionView *)colectionView skip:(NSInteger)skip category:(DCategoryModel *)category andCallBack:(void (^)(NSArray *array))callBack{

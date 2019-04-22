@@ -56,6 +56,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
+    if (self.viewModel.cellsArray.count) {
+        HIDE_PROGRESS;
+    }
     return self.viewModel.cellsArray.count;
 }
 

@@ -29,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self customSetup];
+    SHOW_PROGRESS;
     self.tabBarController.tabBar.barTintColor =  SYSTEM_NAV;
     self.navigationController.navigationBar.barTintColor = SYSTEM_NAV;
     [self.navigationItem setTitle:@"Акции"];

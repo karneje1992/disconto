@@ -73,8 +73,13 @@
 
     [controller.navigationItem setTitle:_title];
     _collectionView = [self collectionViewFormController:controller];
-    [self getModelsWithSkip:10];
-    [_collectionView reloadData];
+    
+    [DProductModel getNewAllProductsWithCollectionView:nil skip:0 category:_categoryModel andCallBack:^(NSArray *array) {
+        
+            _modelsArray = array.mutableCopy;
+            [_collectionView reloadData];
+        HIDE_PROGRESS;
+    }];
     
 }
 
@@ -97,15 +102,8 @@
 
 - (void)getModelsWithSkip:(NSInteger)skip{
 
-    [DProductModel getNewAllProductsWithCollectionView:nil skip:0 category:_categoryModel andCallBack:^(NSArray *array) {
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            //tell the main UI thread here
-            _modelsArray = array.mutableCopy;
-            [_collectionView reloadData];
-        });
+    SHOW_PROGRESS;
 
-    }];
 }
 
 @end
